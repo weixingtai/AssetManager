@@ -3,41 +3,19 @@ package com.suromo.assetmanager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.suromo.assetmanager.ui.theme.AssetManagerTheme
+import androidx.core.view.WindowCompat
+import com.suromo.assetmanager.ui.MainScreen
+import com.suromo.assetmanager.util.rememberWindowSizeClass
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+
+        val appContainer = (application as MainApplication).container
         setContent {
-            AssetManagerTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
+            val windowSizeClass = rememberWindowSizeClass()
+            MainScreen(appContainer, windowSizeClass)
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    AssetManagerTheme {
-        Greeting("Android")
     }
 }

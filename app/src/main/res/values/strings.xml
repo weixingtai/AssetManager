@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">AssetManager</string>
+    <string name="app_name">资产管家</string>
+    <string name="detail">明细</string>
+    <string name="asset">资产</string>
+    <string name="keep_accounts">记帐</string>
+    <string name="bill">账单</string>
+    <string name="user">我的</string>
+    <string name="cant_update_latest_data">Can update latest data</string>
+    <string name="cd_open_navigation_drawer">打开导航抽屉</string>
+    <string name="home_tap_to_load_content">点击加载内容</string>
+    <string name="retry">重试</string>
+    <string name="cant_update_latest_news">无法更新最新条目</string>
 </resources>
